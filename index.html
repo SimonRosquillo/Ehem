@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text" style="color: bisque;">Wanna grab some coffee Lea?</h1>
+      </div>
+      
+      <div class="gif_container">
+        <img
+          src="https://i.pinimg.com/originals/88/c5/3b/88c53b91666a7fd8ac13e6de5b6bf1b1.gif"
+          width="150"
+          height="159"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()" style="background-color: greenyellow; color: black;">Yes</button>
+        <button
+          class="btn"
+          id="noButton"
+          onmouseover="moveButton()"
+          onclick="moveButton()"
+        style="background-color: red;color: black;">
+          No
+        </button>
+
+        <script>
+          function nextPage() {
+            window.location.href = "YES.html";
+          }
+
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
